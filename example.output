@@ -1,5 +1,7 @@
 # Input: example_data/SRR650219_1.fastq.gz
 # Input: example_data/SRR650219_2.fastq.gz
+# Number of bases in the input file(s): 123930842
+# Estimated read depth (#Bases/(4.5Mbp)): 27.54
 # Minimum depth cut-off: 2.75
 # Minimum coverage cut-off: 0.8
 # RD_name       Maximum_depth   Minimum_depth   Median_depth    #pos_pass_cutoff        #total_pos      %pos_pass_cutoff        Prediction
