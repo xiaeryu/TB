@@ -296,7 +296,7 @@ if __name__ == "__main__":
         outH.write("# Input: " + input2 + '\n')
     
     outH.write("# Number of bases in the input file(s): %d\n" % throughput)
-    outH.write("# Estimated read depth (#Bases/(4.5Mbp)): %.2f\n" % throughput/4500000)
+    outH.write("# Estimated read depth (#Bases/(4.5Mbp)): %.2f\n" % int(throughput) * 0.1 / 4500000)
     outH.write("# Minimum depth cut-off: %.2f\n" % min)
     outH.write("# Minimum coverage cut-off: " + str(coverage) + '\n')
     outH.write("# RD_name\tMaximum_depth\tMinimum_depth\tMedian_depth\t#pos_pass_cutoff\t#total_pos\t%pos_pass_cutoff\tPrediction\n")
