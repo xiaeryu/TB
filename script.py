@@ -266,8 +266,8 @@ if __name__ == "__main__":
 
     # Cut-off definition if not personalized
     if not personalized:
-        min = 0.1 * throughput / 4500000
-        coverage = 0.8
+        min = 0.17 * throughput / 4500000
+        coverage = 0.5
 
     # RDs included in the analysis
     RDs = ["RD9_1","RD711_2","RD702_3","RD4_4","RD1bcg_5","RD1mic_6","RD2seal_7","RD2bcg_8","RD7_9","RD8_10","RD10_11","RD12bovis_12","RD12can_13","RD105_14","RD239_15","RD750_16","RD142_17","RD150_18","RD181_19","RD207_20","RD115_21","RD122_22","RD174_23","RD182_24","RD183_25","RD193_26","RD219_27","RD724_28","RD726_29","RD761_30"]
