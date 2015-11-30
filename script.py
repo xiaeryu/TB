@@ -194,7 +194,7 @@ class Main:
         return [most, least, self.median(inarr, totalNum), pf]
 
 
-    def dealDeletion(self, inbam):
+    def dealDeletion(self, inbam, min):
         '''
         This function pays special attention to the 7bp_pks15.1, which can be a 6bp deletion, 7bp deletion, or intact
         '''
@@ -218,7 +218,11 @@ class Main:
             storage[item] =storage.get(item,0) + 1
 
         maxKey, maxVal = max(storage.iteritems(), key=lambda x:x[1])
-        return [storage, maxKey+'D']
+        if maxVal >= min:
+            return [storage, maxKey+'D']
+        else:
+            return [storage, 'Complete']
+
 
 
 
@@ -309,7 +313,7 @@ if __name__ == "__main__":
         outH.write(RD+'\t'+str(outStats[0])+'\t'+str(outStats[1])+'\t'+str(outStats[2])+'\t'+str(outStats[3])+'\t'+str(RD_length[RD])+'\t'+"%.2f" % percentage+'\t'+prediction+'\n')
 
     # Dealing with 7bp_pks15.1
-    [deletionStat,deletionPred] = t.dealDeletion(outprefix+'.sort.bam')
+    [deletionStat,deletionPred] = t.dealDeletion(outprefix+'.sort.bam', min)
     outH.write('7bp_pks15.1\t--\t--\t--\t--\t--\t'+str(deletionStat)+'\t'+deletionPred+'\n')
     outH.close()
 
