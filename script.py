@@ -206,7 +206,7 @@ class Main:
             match = re.search(r'^(\d+)M(\d+)D',cigar)
             if match:
                 start = int(tmp[3]) + int(match.group(1))
-                if start >= 153 and start <= 167:
+                if start >= 152 and start <= 167:
                     deletion.append(match.group(2))
         process.terminate()
 
