@@ -450,4 +450,4 @@ if __name__ == "__main__":
     if not debug:
         post = ['.sam','.bam','.sort.bam','.sort.bam.bai']
         for i in post:
-            subprocess.call("rm %s%s" % (outprefix,i), shell=True)
+            os.remove("%s%s" % (outprefix,i))
